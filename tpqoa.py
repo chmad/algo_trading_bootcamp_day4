@@ -120,7 +120,7 @@ class tpqoa(object):
             data = self.retrieve_data(instrument, start, end,
                                       granularity, price)
         
-        return data
+        return data[['o', 'h', 'l', 'c', 'complete', 'volume']]
 
     def create_order(self, instrument, units):
         ''' Places order with Oanda.
